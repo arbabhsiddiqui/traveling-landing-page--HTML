@@ -73,7 +73,6 @@ input {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 140px 20px;
   align-items: flex-start;
 
   h1 {
@@ -84,7 +83,7 @@ input {
   .pointers {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 70%;
     gap: 10px 20px;
 
     .point {
@@ -106,7 +105,7 @@ input {
   justify-content: center;
   align-items: center;
   margin-block-start: -20px;
-  padding: 40px 20px;
+  padding: 20px 20px;
 
   .reasons {
     margin-top: 10px;
@@ -124,7 +123,6 @@ input {
       gap: 10px;
       border-radius: 10px;
       .icon {
-        flex-basis: 30px;
         background: #f7f1ea;
         width: 30px;
         height: 30px;
@@ -136,6 +134,9 @@ input {
           width: 50%;
           height: 50%;
         }
+      }
+      h4 {
+        font-size: 14px;
       }
     }
   }

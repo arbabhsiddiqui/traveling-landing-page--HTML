@@ -60,7 +60,6 @@ input {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 140px 20px;
   align-items: flex-start;
 }
 .hero-section h1 {
@@ -70,7 +69,7 @@ input {
 .hero-section .pointers {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
+  width: 70%;
   gap: 10px 20px;
 }
 .hero-section .pointers .point {
@@ -90,7 +89,7 @@ input {
   justify-content: center;
   align-items: center;
   margin-block-start: -20px;
-  padding: 40px 20px;
+  padding: 20px 20px;
 }
 .why-with-us .reasons {
   margin-top: 10px;
@@ -109,7 +108,6 @@ input {
   border-radius: 10px;
 }
 .why-with-us .reasons .reason-card .icon {
-  flex-basis: 30px;
   background: #f7f1ea;
   width: 30px;
   height: 30px;
@@ -121,6 +119,9 @@ input {
 .why-with-us .reasons .reason-card .icon img {
   width: 50%;
   height: 50%;
+}
+.why-with-us .reasons .reason-card h4 {
+  font-size: 14px;
 }
 
 .phone-form {
