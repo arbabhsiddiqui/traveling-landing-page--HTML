@@ -27,6 +27,11 @@ body {
   margin: 0 auto;
 }
 
+input {
+  height: 30px;
+  padding-inline-start: 10px;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -41,6 +46,9 @@ body {
 .btn:hover {
   cursor: pointer;
   background-color: #01013c;
+}
+.btn.btn-success {
+  background: #589f42;
 }
 
 .hero-section {
@@ -92,13 +100,15 @@ body {
 .why-with-us .reasons .reason-card {
   padding: 10px;
   background: #fff;
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
 }
 .why-with-us .reasons .reason-card .icon {
+  flex-basis: 30px;
   background: #f7f1ea;
   width: 30px;
   height: 30px;
@@ -110,6 +120,24 @@ body {
 .why-with-us .reasons .reason-card .icon img {
   width: 50%;
   height: 50%;
+}
+
+.phone-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 40px 0;
+}
+.phone-form form {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .popular {
@@ -146,6 +174,12 @@ body {
   gap: 10px;
 }
 .popular .popular-container .right .reels-container .reel {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
   background: #f7f1ea;
 }
 .popular .popular-container .right .star-container {
@@ -154,4 +188,40 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+.limited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: #fdf3ea;
+  padding: 20px;
+}
+
+.get-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 40px 0;
+  flex-wrap: wrap;
+  display: none;
+}
+.get-quote .left ul {
+  list-style: disc !important;
+}
+.get-quote .right {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.get-quote .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }/*# sourceMappingURL=main.css.map */

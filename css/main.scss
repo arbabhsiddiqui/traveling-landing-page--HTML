@@ -31,6 +31,11 @@ ul {
   //   list-style: none;
 }
 
+input {
+  height: 30px;
+  padding-inline-start: 10px;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -44,6 +49,10 @@ ul {
   &:hover {
     cursor: pointer;
     background-color: #01013c;
+  }
+
+  &.btn-success {
+    background: #589f42;
   }
 }
 
@@ -107,12 +116,14 @@ ul {
     .reason-card {
       padding: 10px;
       background: #fff;
-      display: flex;
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      justify-content: center;
       align-items: center;
       gap: 10px;
       border-radius: 10px;
       .icon {
+        flex-basis: 30px;
         background: #f7f1ea;
         width: 30px;
         height: 30px;
@@ -126,6 +137,24 @@ ul {
         }
       }
     }
+  }
+}
+
+.phone-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 40px 0;
+  form {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -165,6 +194,12 @@ ul {
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         .reel {
+          height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          border-radius: 10px;
           background: #f7f1ea;
         }
       }
@@ -176,6 +211,47 @@ ul {
         flex-direction: column;
         text-align: center;
       }
+    }
+  }
+}
+
+.limited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: #fdf3ea;
+  padding: 20px;
+}
+
+.get-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 40px 0;
+  flex-wrap: wrap;
+  display: none;
+
+  .left {
+    ul {
+      list-style: disc !important;
+    }
+  }
+
+  .right {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 }
