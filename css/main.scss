@@ -106,6 +106,7 @@ input {
   align-items: center;
   margin-block-start: -20px;
   padding: 20px 20px;
+  border-top: none;
 
   .reasons {
     margin-top: 10px;
@@ -152,6 +153,7 @@ input {
 
   h5 {
     text-align: center;
+    font-size: 30px;
   }
   form {
     margin-top: 10px;
@@ -166,7 +168,7 @@ input {
 
 .popular {
   background: #fff;
-  padding: 30px 20px;
+  padding: 30px 20px 200px 20px;
 
   h2 {
     text-align: center;
@@ -174,12 +176,14 @@ input {
 
   .popular-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     .left {
       background: #f1f0f8;
       border-radius: 10px;
       padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
 
       .popular-card {
         display: flex;
@@ -229,6 +233,8 @@ input {
   flex-direction: column;
   background: #fdf3ea;
   padding: 20px;
+  position: fixed;
+  bottom: 0px;
 }
 
 .get-quote {

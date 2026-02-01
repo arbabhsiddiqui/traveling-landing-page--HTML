@@ -90,6 +90,7 @@ input {
   align-items: center;
   margin-block-start: -20px;
   padding: 20px 20px;
+  border-top: none;
 }
 .why-with-us .reasons {
   margin-top: 10px;
@@ -134,6 +135,7 @@ input {
 }
 .phone-form h5 {
   text-align: center;
+  font-size: 30px;
 }
 .phone-form form {
   margin-top: 10px;
@@ -147,20 +149,22 @@ input {
 
 .popular {
   background: #fff;
-  padding: 30px 20px;
+  padding: 30px 20px 200px 20px;
 }
 .popular h2 {
   text-align: center;
 }
 .popular .popular-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
 }
 .popular .popular-container .left {
   background: #f1f0f8;
   border-radius: 10px;
   padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .popular .popular-container .left .popular-card {
   display: flex;
@@ -203,6 +207,8 @@ input {
   flex-direction: column;
   background: #fdf3ea;
   padding: 20px;
+  position: fixed;
+  bottom: 0px;
 }
 
 .get-quote {
