@@ -52,7 +52,7 @@ input {
 }
 
 .hero-section {
-  background: linear-gradient(180deg, rgba(249, 245, 225, 0.147) 0%, rgba(245, 138, 92, 0) 50%, rgba(252, 251, 252, 0.817) 70%, rgb(252, 251, 252) 100%), url("../images/image2.webp");
+  background: linear-gradient(180deg, rgba(249, 245, 225, 0.147) 0%, rgba(245, 138, 92, 0) 50%, rgba(244, 243, 249, 0.3411764706) 70%, #f4f3f9 100%), url("../images/image2.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -89,10 +89,11 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-start: -40px;
+  margin-block-start: -20px;
   padding: 40px 20px;
 }
 .why-with-us .reasons {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
@@ -129,6 +130,9 @@ input {
   justify-content: center;
   background: #fff;
   padding: 40px 0;
+}
+.phone-form h5 {
+  text-align: center;
 }
 .phone-form form {
   margin-top: 10px;

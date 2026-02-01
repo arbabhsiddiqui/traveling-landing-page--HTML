@@ -62,8 +62,8 @@ input {
       180deg,
       rgba(249, 245, 225, 0.147) 0%,
       rgba(245, 138, 92, 0) 50%,
-      rgba(252, 251, 252, 0.817) 70%,
-      rgb(252, 251, 252) 100%
+      #f4f3f957 70%,
+      #f4f3f9 100%
     ),
     url("../images/image2.webp");
   background-position: center;
@@ -105,10 +105,11 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-start: -40px;
+  margin-block-start: -20px;
   padding: 40px 20px;
 
   .reasons {
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -147,6 +148,10 @@ input {
   justify-content: center;
   background: #fff;
   padding: 40px 0;
+
+  h5 {
+    text-align: center;
+  }
   form {
     margin-top: 10px;
     border: 1px solid #ccc;
