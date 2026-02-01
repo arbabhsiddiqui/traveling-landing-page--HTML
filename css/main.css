@@ -149,7 +149,7 @@ input {
 
 .popular {
   background: #fff;
-  padding: 30px 20px 200px 20px;
+  padding: 30px 20px;
 }
 .popular h2 {
   text-align: center;
@@ -197,6 +197,100 @@ input {
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+.testimonials {
+  background: var(--light-bg);
+  padding: 30px 20px 200px 20px;
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+.testimonials .testimonial-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonials .testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.testimonials .testimonial-card {
+  flex: 0 0 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.testimonials .testimonial-card .testimonial-content {
+  background: var(--accent-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonials .testimonial-card .testimonial-content p {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text);
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-author div {
+  text-align: left;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-author div h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-author div span {
+  font-size: 14px;
+  color: #666;
+}
+.testimonials .slider-controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.testimonials .slider-controls button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.testimonials .slider-controls button:hover {
+  background: var(--text);
 }
 
 .limited {
