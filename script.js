@@ -50,3 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize
   updateSlider();
 });
+
+// Accordion functionality
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+accordionHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all items
+    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+    
+    // Open clicked item if not already open
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});

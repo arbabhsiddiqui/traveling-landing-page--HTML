@@ -225,6 +225,88 @@ input {
   }
 }
 
+.itineraries {
+  background: #fff;
+  padding: 30px 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .accordion-header {
+      background: #f1f0f8;
+      padding: 15px;
+      margin: 0;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover {
+        background: #e0e0f0;
+      }
+
+      .arrow {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        transform: rotate(90deg);
+      }
+    }
+
+    &.active {
+      .accordion-header .arrow {
+        transform: rotate(-90deg);
+      }
+
+      .accordion-content {
+        max-height: 1000px; // Adjust based on content
+      }
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #fafafa;
+
+      .day {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        h4 {
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
+
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
 .testimonials {
   background: var(--light-bg);
   padding: 30px 20px 200px 20px;

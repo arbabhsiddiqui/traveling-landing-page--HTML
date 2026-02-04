@@ -199,6 +199,73 @@ input {
   text-align: center;
 }
 
+.itineraries {
+  background: #fff;
+  padding: 30px 20px;
+}
+.itineraries h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.itineraries .accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.itineraries .accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.itineraries .accordion-item .accordion-header {
+  background: #f1f0f8;
+  padding: 15px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itineraries .accordion-item .accordion-header:hover {
+  background: #e0e0f0;
+}
+.itineraries .accordion-item .accordion-header .arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+}
+.itineraries .accordion-item.active .accordion-header .arrow {
+  transform: rotate(-90deg);
+}
+.itineraries .accordion-item.active .accordion-content {
+  max-height: 1000px;
+}
+.itineraries .accordion-item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fafafa;
+}
+.itineraries .accordion-item .accordion-content .day {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.itineraries .accordion-item .accordion-content .day:last-child {
+  border-bottom: none;
+}
+.itineraries .accordion-item .accordion-content .day h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.itineraries .accordion-item .accordion-content .day p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
 .testimonials {
   background: var(--light-bg);
   padding: 30px 20px 200px 20px;
