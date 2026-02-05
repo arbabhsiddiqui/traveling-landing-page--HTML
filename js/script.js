@@ -128,3 +128,9 @@ accordionHeaders.forEach((header) => {
     }
   });
 });
+
+const form = document.querySelector(".phone-form form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.querySelector(".thank-you-message").classList.remove("hidden");
+});

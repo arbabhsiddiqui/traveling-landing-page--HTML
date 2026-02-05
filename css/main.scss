@@ -150,7 +150,8 @@ input {
   justify-content: center;
   background: #fff;
   padding: 17px 0;
-
+  border-radius: 10px;
+  border: 1px solid #ccc;
   h5 {
     text-align: center;
     font-size: 30px;
@@ -158,9 +159,9 @@ input {
   }
   form {
     margin-top: 10px;
-    border: 1px solid #ccc;
+
     padding: 27px;
-    border-radius: 10px;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -495,6 +496,46 @@ input {
 
   100% {
     opacity: 1;
+  }
+}
+
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+
+  &.hidden {
+    display: none;
+  }
+
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #28a745;
+    color: white;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+  }
+
+  p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
   }
 }
 
