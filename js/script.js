@@ -5,6 +5,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = 0;
   const totalCards = 8; // Original cards, duplicates are for seamless transition
+  let autoSlideInterval;
+
+  function stopAllVideos() {
+    const videos = document.querySelectorAll(".testimonial-track video");
+    videos.forEach((video) => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+
+  function isAnyVideoPlaying() {
+    const videos = document.querySelectorAll(".testimonial-track video");
+    return Array.from(videos).some((video) => !video.paused);
+  }
+
+  function clearAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+  }
+
+  function startAutoSlide() {
+    clearAutoSlide();
+    autoSlideInterval = setInterval(() => {
+      if (!isAnyVideoPlaying()) {
+        nextSlide();
+      }
+    }, 5000);
+  }
 
   function updateSlider() {
     const translateX = -currentIndex * 100;
@@ -12,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function nextSlide() {
+    // Stop all videos before moving to next
+    stopAllVideos();
+
     currentIndex++;
     if (currentIndex >= totalCards) {
       // Reset to first card without animation
@@ -24,9 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       updateSlider();
     }
+
+    // Restart auto-slide
+    startAutoSlide();
   }
 
   function prevSlide() {
+    // Stop all videos before moving to previous
+    stopAllVideos();
+
     if (currentIndex === 0) {
       // Go to last card without animation
       track.style.transition = "none";
@@ -39,32 +78,53 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex--;
       updateSlider();
     }
+
+    // Restart auto-slide
+    startAutoSlide();
   }
 
   nextBtn.addEventListener("click", nextSlide);
   prevBtn.addEventListener("click", prevSlide);
 
-  // Auto-slide every 5 seconds
-  setInterval(nextSlide, 5000);
+  // Add event listeners to videos to detect play/pause
+  const videos = document.querySelectorAll(".testimonial-track video");
+  videos.forEach((video) => {
+    video.addEventListener("play", () => {
+      clearAutoSlide();
+    });
+
+    video.addEventListener("pause", () => {
+      startAutoSlide();
+    });
+
+    video.addEventListener("ended", () => {
+      startAutoSlide();
+    });
+  });
+
+  // Start auto-slide
+  startAutoSlide();
 
   // Initialize
   updateSlider();
 });
 
 // Accordion functionality
-const accordionHeaders = document.querySelectorAll('.accordion-header');
+const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-accordionHeaders.forEach(header => {
-  header.addEventListener('click', () => {
+accordionHeaders.forEach((header) => {
+  header.addEventListener("click", () => {
     const item = header.parentElement;
-    const isActive = item.classList.contains('active');
-    
+    const isActive = item.classList.contains("active");
+
     // Close all items
-    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
-    
+    document
+      .querySelectorAll(".accordion-item")
+      .forEach((i) => i.classList.remove("active"));
+
     // Open clicked item if not already open
     if (!isActive) {
-      item.classList.add('active');
+      item.classList.add("active");
     }
   });
 });
