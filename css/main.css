@@ -27,6 +27,10 @@ body {
   margin: 0 auto;
 }
 
+ul {
+  list-style-type: circle;
+}
+
 input {
   height: 30px;
   padding-inline-start: 10px;
@@ -52,11 +56,11 @@ input {
 }
 
 .hero-section {
-  background: linear-gradient(180deg, rgba(249, 245, 225, 0.147) 0%, rgba(245, 138, 92, 0) 50%, rgba(244, 243, 249, 0.3411764706) 70%, #f4f3f9 100%), url("../images/image2.webp");
+  background: linear-gradient(180deg, rgba(249, 245, 225, 0.147) 0%, rgba(245, 138, 92, 0) 50%, rgba(244, 243, 249, 0.3411764706) 70%, #f4f3f9 100%), url("../assets/images/banner.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 40px 10px;
+  padding: 93px 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -118,8 +122,8 @@ input {
   border-radius: 50%;
 }
 .why-with-us .reasons .reason-card .icon img {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
 }
 .why-with-us .reasons .reason-card h4 {
   font-size: 14px;
@@ -131,17 +135,18 @@ input {
   align-items: center;
   justify-content: center;
   background: #fff;
-  padding: 40px 0;
+  padding: 17px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 .phone-form h5 {
   text-align: center;
   font-size: 30px;
+  margin-top: -20px;
 }
 .phone-form form {
   margin-top: 10px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 27px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -149,10 +154,11 @@ input {
 
 .popular {
   background: #fff;
-  padding: 30px 20px;
+  padding: 3px 20px;
 }
 .popular h2 {
   text-align: center;
+  margin-bottom: 13px;
 }
 .popular .popular-container {
   display: grid;
@@ -199,16 +205,84 @@ input {
   text-align: center;
 }
 
+.itineraries {
+  background: #fff;
+  padding: 30px 20px;
+}
+.itineraries h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.itineraries .accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.itineraries .accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.itineraries .accordion-item .accordion-header {
+  background: #f1f0f8;
+  padding: 15px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itineraries .accordion-item .accordion-header:hover {
+  background: #e0e0f0;
+}
+.itineraries .accordion-item .accordion-header .arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+}
+.itineraries .accordion-item.active .accordion-header .arrow {
+  transform: rotate(-90deg);
+}
+.itineraries .accordion-item.active .accordion-content {
+  max-height: 1000px;
+}
+.itineraries .accordion-item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fafafa;
+}
+.itineraries .accordion-item .accordion-content .day {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.itineraries .accordion-item .accordion-content .day:last-child {
+  border-bottom: none;
+}
+.itineraries .accordion-item .accordion-content .day h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.itineraries .accordion-item .accordion-content .day p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
 .testimonials {
   background: var(--light-bg);
-  padding: 30px 20px 200px 20px;
+  padding: 30px 20px 150px 20px;
   text-align: center;
 }
 .testimonials h2 {
   font-size: 36px;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  line-height: 39px;
 }
 .testimonials .testimonial-slider {
   overflow: hidden;
@@ -231,7 +305,7 @@ input {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  height: 200px;
+  /* height: 200px;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -300,9 +374,19 @@ input {
   text-align: center;
   flex-direction: column;
   background: #fdf3ea;
-  padding: 20px;
+  padding: 21px 31px;
   position: fixed;
   bottom: 0px;
+}
+
+.limited > h2 {
+  color: red;
+  font-size: 15px;
+}
+
+.limited > p {
+  font-size: 12px;
+  padding-bottom: 45px;
 }
 
 .get-quote {
@@ -329,4 +413,74 @@ input {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.btn-whatsaap {
+  float: left;
+  position: absolute;
+  left: 26px;
+  bottom: 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  background-color: #25d366;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+.thank-you-message.hidden {
+  display: none;
+}
+.thank-you-message .checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #28a745;
+  color: white;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.thank-you-message h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+.thank-you-message p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.btn-Call {
+  float: right;
+  position: absolute;
+  right: 26px;
+  bottom: 15px;
+  border-radius: 20px;
+  font-size: 13px;
 }/*# sourceMappingURL=main.css.map */
