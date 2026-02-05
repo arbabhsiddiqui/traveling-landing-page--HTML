@@ -254,6 +254,7 @@ input {
   overflow: hidden;
   transition: max-height 0.3s ease;
   background: #fafafa;
+  padding: 0 25px;
 }
 .itineraries .accordion-item .accordion-content .day {
   padding: 15px;
