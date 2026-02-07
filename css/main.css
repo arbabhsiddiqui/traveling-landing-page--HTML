@@ -27,6 +27,12 @@ body {
   margin: 0 auto;
 }
 
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 ul {
   list-style-type: circle;
 }
@@ -56,15 +62,7 @@ input {
 }
 
 .hero-section {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(249, 245, 225, 0.147) 0%,
-      rgba(245, 138, 92, 0) 50%,
-      rgba(244, 243, 249, 0.3411764706) 70%,
-      #f4f3f9 100%
-    ),
-    url("../assets/images/banner.png");
+  background: linear-gradient(180deg, rgba(249, 245, 225, 0.147) 0%, rgba(245, 138, 92, 0) 50%, rgba(244, 243, 249, 0.3411764706) 70%, #f4f3f9 100%), url("../assets/images/new.jpeg");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -522,4 +520,4 @@ input {
   background: #0b5fff;
   color: #fff;
   text-decoration: none;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
