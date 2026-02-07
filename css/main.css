@@ -484,4 +484,42 @@ input {
   bottom: 15px;
   border-radius: 20px;
   font-size: 13px;
+}
+
+/* Thankyou page styles (scoped to .thankyou-page on the <body>) */
+.thankyou-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+.thankyou-page .thankyou {
+  text-align: center;
+  padding: 2rem;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+.thankyou-page .checkmark {
+  font-size: 54px;
+  color: #2db34a;
+  margin-bottom: 0.5rem;
+}
+.thankyou-page .thankyou h3 {
+  margin: 0.25rem 0;
+}
+.thankyou-page .thankyou p {
+  color: #555;
+}
+.thankyou-page .btn-home {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background: #0b5fff;
+  color: #fff;
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
