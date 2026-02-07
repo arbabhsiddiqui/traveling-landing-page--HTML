@@ -55,23 +55,23 @@ body {
 
 .container {
   width: 90%;
-  max-width: 500px;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.video {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 ul {
   list-style-type: circle;
 }
 
-input {
+input,
+select,
+textarea {
   height: 30px;
   padding-inline-start: 10px;
+
+  @include breakpoint(res768) {
+    height: 40px;
+  }
 }
 
 .btn {
@@ -114,170 +114,170 @@ input {
   align-items: flex-start;
 
   @include breakpoint(res768) {
-    padding: 200px 10px;
-    background-size: contain;
-    background-position: center;
+    padding: 20px 10px;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    background: #fff;
   }
 
-  h1 {
-    font-size: 35px;
-    line-height: 1;
-
-    @include breakpoint(res768) {
-      font-size: 50px;
-    }
-  }
-
-  .pointers {
+  .hero-section-container {
     display: flex;
-    flex-wrap: wrap;
-    width: 70%;
-    gap: 10px 20px;
+    gap: 20px;
+    align-items: center;
 
     @include breakpoint(res768) {
-      margin-block-start: 30px;
+      gap: 50px;
     }
 
-    .point {
-      text-transform: capitalize;
-      list-style: none;
-      &:nth-child(2) {
-        list-style: disc !important;
+    .text-container {
+      h1 {
+        font-size: 35px;
+        line-height: 1;
+
+        @include breakpoint(res768) {
+          font-size: 55px;
+        }
       }
-      &:nth-child(3) {
-        list-style: disc !important;
+
+      .pointers {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        gap: 10px 20px;
+
+        @include breakpoint(res768) {
+          margin-block-start: 30px;
+        }
+
+        .point {
+          text-transform: capitalize;
+          list-style: none;
+          &:nth-child(2) {
+            list-style: disc !important;
+          }
+          &:nth-child(3) {
+            list-style: disc !important;
+          }
+        }
+      }
+    }
+
+    img {
+      display: none;
+
+      @include breakpoint(res768) {
+        display: block;
+        width: 600px;
+        height: auto;
+        border-radius: 8px;
       }
     }
   }
 }
 
 .why-with-us {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-block-start: -20px;
   padding: 20px 20px;
-  border-top: none;
 
   @include breakpoint(res768) {
-    padding: 40px 20px;
+    padding: 120px 20px;
   }
 
-  .reasons {
-    margin-top: 10px;
+  .why-with-us-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-
-    .reason-card {
-      padding: 10px;
-      background: #fff;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 10px;
-
-      @include breakpoint(res768) {
-        padding: 30px 20px;
-      }
-
-      .icon {
-        background: #f7f1ea;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-
-        @include breakpoint(res768) {
-          width: 50px;
-          height: 50px;
-        }
-
-        img {
-          width: 60%;
-          height: 60%;
-        }
-      }
-      h4 {
-        font-size: 14px;
-
-        @include breakpoint(res768) {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-}
-
-.phone-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 17px 0;
-
-  h5 {
-    text-align: center;
-    font-size: 30px;
-    margin-top: -20px;
-  }
-  form {
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
-    padding: 27px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-.popular {
-  padding: 40px 20px;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 13px;
-  }
-
-  .popular-container {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 20px;
 
-    .reels-container {
+    @include breakpoint(res768) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .reason-container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      .reel {
-        background: #ffcca0;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border-radius: 10px;
+      text-align: center;
 
-        video {
-          border-radius: 8px;
-          display: inline-block;
-          width: 400px;
+      .reasons {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        .reason-card {
+          padding: 10px;
+          background: #fff;
+          display: grid;
+          grid-template-columns: auto 1fr;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border-radius: 10px;
+
+          @include breakpoint(res768) {
+            padding: 30px 20px;
+          }
+
+          .icon {
+            background: #f7f1ea;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            @include breakpoint(res768) {
+              width: 50px;
+              height: 50px;
+            }
+
+            img {
+              width: 60%;
+              height: 60%;
+            }
+          }
+          h4 {
+            font-size: 14px;
+
+            @include breakpoint(res768) {
+              font-size: 16px;
+            }
+          }
         }
       }
     }
 
-    .star-container {
+    .phone-form {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      text-align: center;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 10px;
+      gap: 10px;
+      padding: 20px;
+
+      h5 {
+        text-align: center;
+        font-size: 30px;
+      }
+      form {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include breakpoint(res768) {
+          padding: 30px 10px;
+          gap: 20px;
+        }
+      }
     }
   }
 }
@@ -286,9 +286,17 @@ input {
   background: #fff;
   padding: 30px 20px;
 
+  @include breakpoint(res768) {
+    padding: 80px 20px;
+  }
+
   h2 {
     text-align: center;
     margin-bottom: 20px;
+
+    @include breakpoint(res768) {
+      font-size: 40px;
+    }
   }
 
   .accordion-container {
@@ -365,75 +373,138 @@ input {
   }
 }
 
-.testimonials {
-  background: var(--light-bg);
-  padding: 30px 20px 290px 20px;
-  text-align: center;
+.popular {
+  padding: 40px 20px 180px 20px;
+
+  @include breakpoint(res768) {
+    padding: 140px 20px 70px 20px;
+  }
 
   h2 {
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 10px;
-    line-height: 39px;
+    text-align: center;
+    margin-bottom: 13px;
   }
 
-  .testimonial-slider {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .testimonial-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .testimonial-card {
-    flex: 0 0 100%;
-    padding: 10px;
-    box-sizing: border-box;
-
-    .testimonial-content {
-      background: var(--accent-bg);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      /* height: 200px;*/
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      video {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
-    }
-  }
-
-  .slider-controls {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+  .popular-container {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
 
-    button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+    @include breakpoint(res768) {
+      grid-template-columns: 1fr 1fr;
+    }
 
-      &:hover {
-        background: var(--text);
+    .reels-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      .reel {
+        background: #ffcca0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+
+        video {
+          border-radius: 8px;
+          display: inline-block;
+          width: 280px;
+
+          @include breakpoint(res768) {
+            width: 400px;
+          }
+        }
+      }
+
+      .star-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .testimonials {
+      h2 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        line-height: 39px;
+      }
+
+      .testimonial-slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto;
+
+        @include breakpoint(res768) {
+          max-width: 400px;
+        }
+      }
+
+      .testimonial-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .testimonial-card {
+        flex: 0 0 100%;
+        padding: 10px;
+        box-sizing: border-box;
+
+        .testimonial-content {
+          background: var(--accent-bg);
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          /* height: 200px;*/
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          video {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+
+            @include breakpoint(res768) {
+              width: 320px;
+            }
+          }
+        }
+      }
+
+      .slider-controls {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        button {
+          background: var(--primary);
+          color: white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background: var(--text);
+          }
+        }
       }
     }
   }
@@ -452,59 +523,47 @@ input {
 
   @include breakpoint(res768) {
     padding: 30px 50px;
-    left: 38%;
+    position: static;
+
+    width: 100%;
   }
-}
 
-.limited > h2 {
-  color: red;
-  font-size: 15px;
-}
+  h2 {
+    color: red;
+    font-size: 15px;
+  }
 
-.limited > p {
-  font-size: 12px;
-  padding-bottom: 45px;
-}
+  p {
+    font-size: 12px;
+    padding-bottom: 45px;
+  }
 
-.get-quote {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 40px 0;
-  flex-wrap: wrap;
-  display: none;
-
-  .left {
-    ul {
-      list-style: disc !important;
+  .btn-whatsaap {
+    float: left;
+    position: absolute;
+    left: 26px;
+    bottom: 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    background-color: #25d366;
+    @include breakpoint(res768) {
+      position: static;
+      margin-bottom: 20px;
     }
   }
 
-  .right {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .btn-Call {
+    float: right;
+    position: absolute;
+    right: 26px;
+    bottom: 15px;
+    border-radius: 20px;
+    font-size: 13px;
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    @include breakpoint(res768) {
+      position: static;
     }
   }
-}
-
-.btn-whatsaap {
-  float: left;
-  position: absolute;
-  left: 26px;
-  bottom: 15px;
-  border-radius: 20px;
-  font-size: 13px;
-  background-color: #25d366;
 }
 
 .blink {
@@ -523,55 +582,6 @@ input {
   100% {
     opacity: 1;
   }
-}
-
-.thank-you-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-
-  &.hidden {
-    display: none;
-  }
-
-  .checkmark {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #28a745;
-    color: white;
-    font-size: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-
-  h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text);
-    margin: 0;
-  }
-
-  p {
-    font-size: 16px;
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
-  }
-}
-
-.btn-Call {
-  float: right;
-  position: absolute;
-  right: 26px;
-  bottom: 15px;
-  border-radius: 20px;
-  font-size: 13px;
 }
 
 /* Thankyou page styles (scoped to .thankyou-page on the <body>) */

@@ -23,23 +23,26 @@ body {
 
 .container {
   width: 90%;
-  max-width: 500px;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.video {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 ul {
   list-style-type: circle;
 }
 
-input {
+input,
+select,
+textarea {
   height: 30px;
   padding-inline-start: 10px;
+}
+@media (min-width: 48em) {
+  input,
+  select,
+  textarea {
+    height: 40px;
+  }
 }
 
 .btn {
@@ -74,63 +77,97 @@ input {
 }
 @media (min-width: 48em) {
   .hero-section {
-    padding: 200px 10px;
-    background-size: contain;
-    background-position: center;
+    padding: 20px 10px;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    background: #fff;
   }
 }
-.hero-section h1 {
+.hero-section .hero-section-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+@media (min-width: 48em) {
+  .hero-section .hero-section-container {
+    gap: 50px;
+  }
+}
+.hero-section .hero-section-container .text-container h1 {
   font-size: 35px;
   line-height: 1;
 }
 @media (min-width: 48em) {
-  .hero-section h1 {
-    font-size: 50px;
+  .hero-section .hero-section-container .text-container h1 {
+    font-size: 55px;
   }
 }
-.hero-section .pointers {
+.hero-section .hero-section-container .text-container .pointers {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
   gap: 10px 20px;
 }
 @media (min-width: 48em) {
-  .hero-section .pointers {
+  .hero-section .hero-section-container .text-container .pointers {
     margin-block-start: 30px;
   }
 }
-.hero-section .pointers .point {
+.hero-section .hero-section-container .text-container .pointers .point {
   text-transform: capitalize;
   list-style: none;
 }
-.hero-section .pointers .point:nth-child(2) {
+.hero-section .hero-section-container .text-container .pointers .point:nth-child(2) {
   list-style: disc !important;
 }
-.hero-section .pointers .point:nth-child(3) {
+.hero-section .hero-section-container .text-container .pointers .point:nth-child(3) {
   list-style: disc !important;
+}
+.hero-section .hero-section-container img {
+  display: none;
+}
+@media (min-width: 48em) {
+  .hero-section .hero-section-container img {
+    display: block;
+    width: 600px;
+    height: auto;
+    border-radius: 8px;
+  }
 }
 
 .why-with-us {
+  padding: 20px 20px;
+}
+@media (min-width: 48em) {
+  .why-with-us {
+    padding: 120px 20px;
+  }
+}
+.why-with-us .why-with-us-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 48em) {
+  .why-with-us .why-with-us-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.why-with-us .why-with-us-container .reason-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-start: -20px;
-  padding: 20px 20px;
-  border-top: none;
+  text-align: center;
 }
-@media (min-width: 48em) {
-  .why-with-us {
-    padding: 40px 20px;
-  }
-}
-.why-with-us .reasons {
+.why-with-us .why-with-us-container .reason-container .reasons {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
-.why-with-us .reasons .reason-card {
+.why-with-us .why-with-us-container .reason-container .reasons .reason-card {
   padding: 10px;
   background: #fff;
   display: grid;
@@ -141,11 +178,11 @@ input {
   border-radius: 10px;
 }
 @media (min-width: 48em) {
-  .why-with-us .reasons .reason-card {
+  .why-with-us .why-with-us-container .reason-container .reasons .reason-card {
     padding: 30px 20px;
   }
 }
-.why-with-us .reasons .reason-card .icon {
+.why-with-us .why-with-us-container .reason-container .reasons .reason-card .icon {
   background: #f7f1ea;
   width: 30px;
   height: 30px;
@@ -155,93 +192,71 @@ input {
   border-radius: 50%;
 }
 @media (min-width: 48em) {
-  .why-with-us .reasons .reason-card .icon {
+  .why-with-us .why-with-us-container .reason-container .reasons .reason-card .icon {
     width: 50px;
     height: 50px;
   }
 }
-.why-with-us .reasons .reason-card .icon img {
+.why-with-us .why-with-us-container .reason-container .reasons .reason-card .icon img {
   width: 60%;
   height: 60%;
 }
-.why-with-us .reasons .reason-card h4 {
+.why-with-us .why-with-us-container .reason-container .reasons .reason-card h4 {
   font-size: 14px;
 }
 @media (min-width: 48em) {
-  .why-with-us .reasons .reason-card h4 {
+  .why-with-us .why-with-us-container .reason-container .reasons .reason-card h4 {
     font-size: 16px;
   }
 }
-
-.phone-form {
+.why-with-us .why-with-us-container .phone-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: #fff;
-  padding: 17px 0;
+  border-radius: 10px;
+  gap: 10px;
+  padding: 20px;
 }
-.phone-form h5 {
+.why-with-us .why-with-us-container .phone-form h5 {
   text-align: center;
   font-size: 30px;
-  margin-top: -20px;
 }
-.phone-form form {
+.why-with-us .why-with-us-container .phone-form form {
+  width: 100%;
   border-radius: 10px;
   border: 1px solid #ccc;
   margin-top: 10px;
-  padding: 27px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-.popular {
-  padding: 40px 20px;
-}
-.popular h2 {
-  text-align: center;
-  margin-bottom: 13px;
-}
-.popular .popular-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.popular .popular-container .reels-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.popular .popular-container .reels-container .reel {
-  background: #ffcca0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
-}
-.popular .popular-container .reels-container .reel video {
-  border-radius: 8px;
-  display: inline-block;
-  width: 400px;
-}
-.popular .popular-container .star-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+@media (min-width: 48em) {
+  .why-with-us .why-with-us-container .phone-form form {
+    padding: 30px 10px;
+    gap: 20px;
+  }
 }
 
 .itineraries {
   background: #fff;
   padding: 30px 20px;
 }
+@media (min-width: 48em) {
+  .itineraries {
+    padding: 80px 20px;
+  }
+}
 .itineraries h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+@media (min-width: 48em) {
+  .itineraries h2 {
+    font-size: 40px;
+  }
 }
 .itineraries .accordion-container {
   max-width: 800px;
@@ -303,35 +318,91 @@ input {
   color: #666;
 }
 
-.testimonials {
-  background: var(--light-bg);
-  padding: 30px 20px 290px 20px;
+.popular {
+  padding: 40px 20px 180px 20px;
+}
+@media (min-width: 48em) {
+  .popular {
+    padding: 140px 20px 70px 20px;
+  }
+}
+.popular h2 {
+  text-align: center;
+  margin-bottom: 13px;
+}
+.popular .popular-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 48em) {
+  .popular .popular-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.popular .popular-container .reels-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.popular .popular-container .reels-container .reel {
+  background: #ffcca0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+}
+.popular .popular-container .reels-container .reel video {
+  border-radius: 8px;
+  display: inline-block;
+  width: 280px;
+}
+@media (min-width: 48em) {
+  .popular .popular-container .reels-container .reel video {
+    width: 400px;
+  }
+}
+.popular .popular-container .reels-container .star-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
-.testimonials h2 {
+.popular .popular-container .testimonials h2 {
+  text-align: center;
   font-size: 36px;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 10px;
   line-height: 39px;
 }
-.testimonials .testimonial-slider {
+.popular .popular-container .testimonials .testimonial-slider {
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 330px;
   margin: 0 auto;
 }
-.testimonials .testimonial-track {
+@media (min-width: 48em) {
+  .popular .popular-container .testimonials .testimonial-slider {
+    max-width: 400px;
+  }
+}
+.popular .popular-container .testimonials .testimonial-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-.testimonials .testimonial-card {
+.popular .popular-container .testimonials .testimonial-card {
   flex: 0 0 100%;
   padding: 10px;
   box-sizing: border-box;
 }
-.testimonials .testimonial-card .testimonial-content {
+.popular .popular-container .testimonials .testimonial-card .testimonial-content {
   background: var(--accent-bg);
   padding: 30px;
   border-radius: 15px;
@@ -341,18 +412,23 @@ input {
   flex-direction: column;
   justify-content: space-between;
 }
-.testimonials .testimonial-card .testimonial-content video {
-  width: 100%;
+.popular .popular-container .testimonials .testimonial-card .testimonial-content video {
+  width: 250px;
   height: auto;
   border-radius: 10px;
 }
-.testimonials .slider-controls {
+@media (min-width: 48em) {
+  .popular .popular-container .testimonials .testimonial-card .testimonial-content video {
+    width: 320px;
+  }
+}
+.popular .popular-container .testimonials .slider-controls {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-.testimonials .slider-controls button {
+.popular .popular-container .testimonials .slider-controls button {
   background: var(--primary);
   color: white;
   border: none;
@@ -364,7 +440,7 @@ input {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-.testimonials .slider-controls button:hover {
+.popular .popular-container .testimonials .slider-controls button:hover {
   background: var(--text);
 }
 
@@ -382,47 +458,19 @@ input {
 @media (min-width: 48em) {
   .limited {
     padding: 30px 50px;
-    left: 38%;
+    position: static;
+    width: 100%;
   }
 }
-
-.limited > h2 {
+.limited h2 {
   color: red;
   font-size: 15px;
 }
-
-.limited > p {
+.limited p {
   font-size: 12px;
   padding-bottom: 45px;
 }
-
-.get-quote {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 40px 0;
-  flex-wrap: wrap;
-  display: none;
-}
-.get-quote .left ul {
-  list-style: disc !important;
-}
-.get-quote .right {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.get-quote .right form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.btn-whatsaap {
+.limited .btn-whatsaap {
   float: left;
   position: absolute;
   left: 26px;
@@ -430,6 +478,25 @@ input {
   border-radius: 20px;
   font-size: 13px;
   background-color: #25d366;
+}
+@media (min-width: 48em) {
+  .limited .btn-whatsaap {
+    position: static;
+    margin-bottom: 20px;
+  }
+}
+.limited .btn-Call {
+  float: right;
+  position: absolute;
+  right: 26px;
+  bottom: 15px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+@media (min-width: 48em) {
+  .limited .btn-Call {
+    position: static;
+  }
 }
 
 .blink {
@@ -447,51 +514,6 @@ input {
     opacity: 1;
   }
 }
-.thank-you-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-}
-.thank-you-message.hidden {
-  display: none;
-}
-.thank-you-message .checkmark {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #28a745;
-  color: white;
-  font-size: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-.thank-you-message h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--text);
-  margin: 0;
-}
-.thank-you-message p {
-  font-size: 16px;
-  color: #666;
-  margin: 0;
-  line-height: 1.6;
-}
-
-.btn-Call {
-  float: right;
-  position: absolute;
-  right: 26px;
-  bottom: 15px;
-  border-radius: 20px;
-  font-size: 13px;
-}
-
 /* Thankyou page styles (scoped to .thankyou-page on the <body>) */
 .thankyou-page {
   display: flex;
