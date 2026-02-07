@@ -115,6 +115,8 @@ input {
 
   @include breakpoint(res768) {
     padding: 200px 10px;
+    background-size: contain;
+    background-position: center;
   }
 
   h1 {
@@ -365,7 +367,7 @@ input {
 
 .testimonials {
   background: var(--light-bg);
-  padding: 30px 20px 150px 20px;
+  padding: 30px 20px 290px 20px;
   text-align: center;
 
   h2 {
@@ -447,6 +449,11 @@ input {
   padding: 21px 31px;
   position: fixed;
   bottom: 0px;
+
+  @include breakpoint(res768) {
+    padding: 30px 50px;
+    left: 38%;
+  }
 }
 
 .limited > h2 {
