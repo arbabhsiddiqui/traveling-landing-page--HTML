@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -56,7 +56,15 @@ input {
 }
 
 .hero-section {
-  background: linear-gradient(180deg, rgba(249, 245, 225, 0.147) 0%, rgba(245, 138, 92, 0) 50%, rgba(244, 243, 249, 0.3411764706) 70%, #f4f3f9 100%), url("../assets/images/banner.png");
+  background:
+    linear-gradient(
+      180deg,
+      rgba(249, 245, 225, 0.147) 0%,
+      rgba(245, 138, 92, 0) 50%,
+      rgba(244, 243, 249, 0.3411764706) 70%,
+      #f4f3f9 100%
+    ),
+    url("../assets/images/banner.png");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -66,15 +74,30 @@ input {
   gap: 15px;
   align-items: flex-start;
 }
+@media (min-width: 48em) {
+  .hero-section {
+    padding: 200px 10px;
+  }
+}
 .hero-section h1 {
   font-size: 35px;
   line-height: 1;
+}
+@media (min-width: 48em) {
+  .hero-section h1 {
+    font-size: 50px;
+  }
 }
 .hero-section .pointers {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
   gap: 10px 20px;
+}
+@media (min-width: 48em) {
+  .hero-section .pointers {
+    margin-block-start: 30px;
+  }
 }
 .hero-section .pointers .point {
   text-transform: capitalize;
@@ -96,6 +119,11 @@ input {
   padding: 20px 20px;
   border-top: none;
 }
+@media (min-width: 48em) {
+  .why-with-us {
+    padding: 40px 20px;
+  }
+}
 .why-with-us .reasons {
   margin-top: 10px;
   display: grid;
@@ -112,6 +140,11 @@ input {
   gap: 10px;
   border-radius: 10px;
 }
+@media (min-width: 48em) {
+  .why-with-us .reasons .reason-card {
+    padding: 30px 20px;
+  }
+}
 .why-with-us .reasons .reason-card .icon {
   background: #f7f1ea;
   width: 30px;
@@ -121,12 +154,23 @@ input {
   align-items: center;
   border-radius: 50%;
 }
+@media (min-width: 48em) {
+  .why-with-us .reasons .reason-card .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
 .why-with-us .reasons .reason-card .icon img {
   width: 60%;
   height: 60%;
 }
 .why-with-us .reasons .reason-card h4 {
   font-size: 14px;
+}
+@media (min-width: 48em) {
+  .why-with-us .reasons .reason-card h4 {
+    font-size: 16px;
+  }
 }
 
 .phone-form {
@@ -136,8 +180,6 @@ input {
   justify-content: center;
   background: #fff;
   padding: 17px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
 }
 .phone-form h5 {
   text-align: center;
@@ -145,6 +187,8 @@ input {
   margin-top: -20px;
 }
 .phone-form form {
+  border-radius: 10px;
+  border: 1px solid #ccc;
   margin-top: 10px;
   padding: 27px;
   display: flex;
@@ -153,51 +197,37 @@ input {
 }
 
 .popular {
-  background: #fff;
-  padding: 3px 20px;
+  padding: 40px 20px;
 }
 .popular h2 {
   text-align: center;
   margin-bottom: 13px;
 }
 .popular .popular-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
-}
-.popular .popular-container .left {
-  background: #f1f0f8;
-  border-radius: 10px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-.popular .popular-container .left .popular-card {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.popular .popular-container .left .popular-card .text-container {
+.popular .popular-container .reels-container {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.popular .popular-container .right {
-  border-radius: 10px;
-  padding: 10px;
-}
-.popular .popular-container .right .reels-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.popular .popular-container .right .reels-container .reel {
-  height: 200px;
+.popular .popular-container .reels-container .reel {
+  background: #ffcca0;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border-radius: 10px;
-  background: #f7f1ea;
 }
-.popular .popular-container .right .star-container {
+.popular .popular-container .reels-container .reel video {
+  border-radius: 8px;
+  display: inline-block;
+  width: 400px;
+}
+.popular .popular-container .star-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,7 +328,7 @@ input {
 }
 .testimonials .testimonial-card {
   flex: 0 0 100%;
-  padding: 0 10px;
+  padding: 10px;
   box-sizing: border-box;
 }
 .testimonials .testimonial-card .testimonial-content {
@@ -311,40 +341,10 @@ input {
   flex-direction: column;
   justify-content: space-between;
 }
-.testimonials .testimonial-card .testimonial-content p {
-  font-size: 16px;
-  font-style: italic;
-  color: var(--text);
-  margin: 0;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-}
-.testimonials .testimonial-card .testimonial-content .testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-.testimonials .testimonial-card .testimonial-content .testimonial-author img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.testimonials .testimonial-card .testimonial-content .testimonial-author div {
-  text-align: left;
-}
-.testimonials .testimonial-card .testimonial-content .testimonial-author div h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-  margin: 0;
-}
-.testimonials .testimonial-card .testimonial-content .testimonial-author div span {
-  font-size: 14px;
-  color: #666;
+.testimonials .testimonial-card .testimonial-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 .testimonials .slider-controls {
   margin-top: 30px;
@@ -522,4 +522,4 @@ input {
   background: #0b5fff;
   color: #fff;
   text-decoration: none;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

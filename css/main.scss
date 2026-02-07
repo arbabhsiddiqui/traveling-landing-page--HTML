@@ -1,3 +1,35 @@
+@use "sass:map";
+
+// Breakpoints (em-based, mobile-first)
+$breakpoints-up: (
+  res375: 23.438em,
+  // 375px
+  res425: 26.5625em,
+  // 425px (iPhone Plus etc.)
+  res768: 48em,
+  res800: 50em,
+  res1024: 64em,
+  res1280: 80em,
+  res1366: 85.375em,
+  res1440: 90em,
+  res1920: 120em,
+  res2k: 128em,
+  res4k: 240em,
+);
+
+// Media query mixin
+@mixin breakpoint($size) {
+  $value: map.get($breakpoints-up, $size);
+
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint `#{$size}` not found in $breakpoints-up map.";
+  }
+}
+
 :root {
   --base: #f4f3f9;
   --primary: #ee7c1a;
@@ -23,8 +55,14 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 500px;
   margin: 0 auto;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 ul {
@@ -75,9 +113,17 @@ input {
   gap: 15px;
   align-items: flex-start;
 
+  @include breakpoint(res768) {
+    padding: 200px 10px;
+  }
+
   h1 {
     font-size: 35px;
     line-height: 1;
+
+    @include breakpoint(res768) {
+      font-size: 50px;
+    }
   }
 
   .pointers {
@@ -85,6 +131,10 @@ input {
     flex-wrap: wrap;
     width: 70%;
     gap: 10px 20px;
+
+    @include breakpoint(res768) {
+      margin-block-start: 30px;
+    }
 
     .point {
       text-transform: capitalize;
@@ -108,6 +158,10 @@ input {
   padding: 20px 20px;
   border-top: none;
 
+  @include breakpoint(res768) {
+    padding: 40px 20px;
+  }
+
   .reasons {
     margin-top: 10px;
     display: grid;
@@ -123,6 +177,11 @@ input {
       align-items: center;
       gap: 10px;
       border-radius: 10px;
+
+      @include breakpoint(res768) {
+        padding: 30px 20px;
+      }
+
       .icon {
         background: #f7f1ea;
         width: 30px;
@@ -131,6 +190,12 @@ input {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
+
+        @include breakpoint(res768) {
+          width: 50px;
+          height: 50px;
+        }
+
         img {
           width: 60%;
           height: 60%;
@@ -138,6 +203,10 @@ input {
       }
       h4 {
         font-size: 14px;
+
+        @include breakpoint(res768) {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -150,18 +219,17 @@ input {
   justify-content: center;
   background: #fff;
   padding: 17px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+
   h5 {
     text-align: center;
     font-size: 30px;
     margin-top: -20px;
   }
   form {
+    border-radius: 10px;
+    border: 1px solid #ccc;
     margin-top: 10px;
-
     padding: 27px;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -169,8 +237,7 @@ input {
 }
 
 .popular {
-  background: #fff;
-  padding: 3px 20px;
+  padding: 40px 20px;
 
   h2 {
     text-align: center;
@@ -178,52 +245,37 @@ input {
   }
 
   .popular-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    .left {
-      background: #f1f0f8;
-      border-radius: 10px;
-      padding: 10px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-      .popular-card {
+    .reels-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .reel {
+        background: #ffcca0;
+        padding: 20px;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
 
-        .text-container {
-          display: flex;
-          flex-wrap: wrap;
+        video {
+          border-radius: 8px;
+          display: inline-block;
+          width: 400px;
         }
       }
     }
 
-    .right {
-      border-radius: 10px;
-      padding: 10px;
-
-      .reels-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        .reel {
-          height: 200px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          border-radius: 10px;
-          background: #f7f1ea;
-        }
-      }
-
-      .star-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-      }
+    .star-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
     }
   }
 }
@@ -339,7 +391,7 @@ input {
 
   .testimonial-card {
     flex: 0 0 100%;
-    padding: 0 10px;
+    padding: 10px;
     box-sizing: border-box;
 
     .testimonial-content {
@@ -352,44 +404,10 @@ input {
       flex-direction: column;
       justify-content: space-between;
 
-      p {
-        font-size: 16px;
-        font-style: italic;
-        color: var(--text);
-        margin: 0;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-top: 20px;
-
-        img {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-
-        div {
-          text-align: left;
-
-          h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text);
-            margin: 0;
-          }
-
-          span {
-            font-size: 14px;
-            color: #666;
-          }
-        }
+      video {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
       }
     }
   }
@@ -571,16 +589,20 @@ input {
   .checkmark {
     font-size: 54px;
     color: #2db34a;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .thankyou h3 { margin: .25rem 0; }
-  .thankyou p { color: #555; }
+  .thankyou h3 {
+    margin: 0.25rem 0;
+  }
+  .thankyou p {
+    color: #555;
+  }
 
   .btn-home {
     display: inline-block;
     margin-top: 1rem;
-    padding: .6rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 6px;
     background: #0b5fff;
     color: #fff;
